@@ -21,7 +21,7 @@ git clone https://github.com/trunghm/react-native-app.git
 cd react-native-app
 ```
 
-**Step 3:** Install the Application with
+**Step 3:** Install dependencies
 
 ```
 npm install
