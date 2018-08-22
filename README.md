@@ -33,7 +33,7 @@ npm install
 cd ./ios pod install --verbose
 ```
 
-##How to Run App
+## How to Run App
 
 1.  cd to the repo
 2.  Run Build for either OS
