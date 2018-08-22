@@ -1,5 +1,5 @@
 export default {
-  //Tabs
+  // Tabs
   MAIN_TABS: {
     NONE: -1,
     EVENTS: 0,
@@ -14,5 +14,5 @@ export default {
   PLATFORM: {
     ANDROID: 'android',
     IOS: 'ios'
-  },
+  }
 }

@@ -3,42 +3,35 @@ import { applyMiddleware, compose, createStore } from 'redux'
 import { Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './app-container'
-import appReducer from '../reducers/index';
-import SplashScreen from 'react-native-smart-splash-screen';
+import appReducer from '../reducers/index'
+import SplashScreen from 'react-native-smart-splash-screen'
 
 let middleware = [
-    thunk // Allows action creators to return functions (not just plain objects)
-];
+  thunk // Allows action creators to return functions (not just plain objects)
+]
 
 const store = compose(
-    applyMiddleware(...middleware)
-)(createStore)(appReducer);
+  applyMiddleware(...middleware)
+)(createStore)(appReducer)
 
 export default class AppContainer extends Component {
-  constructor(props){
-    super(props);
+  constructor (props) {
+    super(props)
   }
 
   componentDidMount () {
     SplashScreen.close({
       animationType: SplashScreen.animationType.scale,
       duration: 850,
-      delay: 500,
+      delay: 500
     })
   }
 
-    render() {
-        return (
-            <Provider store={store}>
-                <App />
-            </Provider>
-        );
-    }
+  render () {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    )
+  }
 }
-
-
-
-
-
-
-

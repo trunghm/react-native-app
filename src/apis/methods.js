@@ -4,4 +4,4 @@ export default {
   PUT: 'put',
   PATCH: 'patch',
   DELETE: 'delete'
-};
+}

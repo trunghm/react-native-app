@@ -1,68 +1,68 @@
-import React, {Component} from 'react';
-import {View, ImageBackground, Image, Platform} from 'react-native';
-import EStyleSheet from "react-native-extended-stylesheet";
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import React, {Component} from 'react'
+import {View, ImageBackground, Image, Platform} from 'react-native'
+import EStyleSheet from 'react-native-extended-stylesheet'
+import Carousel, {Pagination} from 'react-native-snap-carousel'
 import Metrics from './themes/Metrics'
-import PlaceHolderRow from "./commons/PlaceHolderRow";
-import StandardBoldText from "./commons/StandardBoldText";
-import StandardText from "./commons/StandardText";
-import Button from "./commons/Button";
-import BoldLink from "./commons/BoldLink";
-import Images from "./themes/Images";
-import Colors from "./themes/Colors";
+import PlaceHolderRow from './commons/PlaceHolderRow'
+import StandardBoldText from './commons/StandardBoldText'
+import StandardText from './commons/StandardText'
+import Button from './commons/Button'
+import BoldLink from './commons/BoldLink'
+import Images from './themes/Images'
+import Colors from './themes/Colors'
 const CarouselData = [
   {
-    title: "THE ESSENTIAL SPORTS TEAM APP",
-    description: "Stay up to date with your teams schedule, scores,\nladders and team messages. And receive a\nnotification anything changes"
+    title: 'THE ESSENTIAL SPORTS TEAM APP',
+    description: 'Stay up to date with your teams schedule, scores,\nladders and team messages. And receive a\nnotification anything changes'
   },
   {
-    title: "LIVE SCORES & STATS",
+    title: 'LIVE SCORES & STATS',
     description: "Admin's can enter official scores and stats and everyone can follow along as it happens"
   },
   {
-    title: "ATTENDANCE & DUTIES",
-    description: "See who can make it to the game, and roster parents and staff to help out with duties"
+    title: 'ATTENDANCE & DUTIES',
+    description: 'See who can make it to the game, and roster parents and staff to help out with duties'
   },
   {
-    title: "MANAGE YOUR TEAM",
-    description: "See Players, Staff, Parents and Volunteers with contact details in one handy location."
+    title: 'MANAGE YOUR TEAM',
+    description: 'See Players, Staff, Parents and Volunteers with contact details in one handy location.'
   },
   {
     title: 'MESSAGES',
     description: 'Team messaging made simple, one place for all communications.'
   }
-];
-const SLIDER_1_FIRST_ITEM = 0;
+]
+const SLIDER_1_FIRST_ITEM = 0
 export default class WelComeComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.onGetStartClick = this.onGetStartClick.bind(this);
-    this.onLogInClick = this.onLogInClick.bind(this);
+  constructor (props) {
+    super(props)
+    this.onGetStartClick = this.onGetStartClick.bind(this)
+    this.onLogInClick = this.onLogInClick.bind(this)
     this.state = {
       slider1ActiveSlide: SLIDER_1_FIRST_ITEM
     }
   }
 
-  onGetStartClick() {
+  onGetStartClick () {
     // Navigate.pushTo(this.props, ScreenName.ENTER_EMAIL_SCREEN);
   }
 
-  onLogInClick() {
+  onLogInClick () {
     // Navigate.pushTo(this.props, ScreenName.LOGIN_SCREEN);
   }
 
-  renderTextItem({item, index}) {
+  renderTextItem ({item, index}) {
     return (
       <View style={styles.slideInnerContainer}>
         <PlaceHolderRow height={30}/>
-        <StandardBoldText text={item.title || ""} isWhiteColor={true}/>
-        <StandardText text={item.description || ""} isWhiteColor={true} isTextCenter={true}/>
+        <StandardBoldText text={item.title || ''} isWhiteColor={true}/>
+        <StandardText text={item.description || ''} isWhiteColor={true} isTextCenter={true}/>
       </View>
-    );
+    )
   }
 
-  renderCarouselView() {
-    const {slider1ActiveSlide} = this.state;
+  renderCarouselView () {
+    const {slider1ActiveSlide} = this.state
     return (
       <View style={styles.carouselWrapper}>
         <Carousel
@@ -91,10 +91,10 @@ export default class WelComeComponent extends Component {
           tappableDots={!!this._slider1Ref}
         />
       </View>
-    );
+    )
   }
 
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <ImageBackground source={Images.splash} style={styles.splash}>
@@ -105,8 +105,8 @@ export default class WelComeComponent extends Component {
             {this.renderCarouselView()}
             <View style={styles.createUserButtonWrapper}>
               <Button isShowRadiusButton
-                      text={"CREATE ACCOUNT"}
-                      onPress={this.onGetStartClick}
+                text={'CREATE ACCOUNT'}
+                onPress={this.onGetStartClick}
               />
             </View>
             <View style={styles.loginWrapper}>
@@ -119,18 +119,18 @@ export default class WelComeComponent extends Component {
           </View>
         </ImageBackground>
       </View>
-    );
+    )
   }
 }
 
 const styles = EStyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff'
   },
   splash: {
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   logoWrapper: {
     width: '100%',
@@ -148,7 +148,7 @@ const styles = EStyleSheet.create({
     width: 7,
     height: 7,
     borderRadius: 3,
-    marginHorizontal: 0,
+    marginHorizontal: 0
   },
   slideInnerContainer: {
     width: Metrics.screenWidth,
@@ -158,11 +158,11 @@ const styles = EStyleSheet.create({
     paddingRight: Metrics.marginRight
   },
   slider: {
-    overflow: 'visible', // for custom animations
+    overflow: 'visible' // for custom animations
   },
   listItemWrapper: {
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   loginWrapper: {
     alignItems: 'center',
@@ -171,11 +171,11 @@ const styles = EStyleSheet.create({
     height: 50
   },
   createUserButtonWrapper: {
-    width: "100%",
+    width: '100%',
     height: 50
   },
   carouselWrapper: {
     height: Platform.OS === 'ios' ? 190 : 196,
     width: '100%'
   }
-});
+})

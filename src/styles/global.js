@@ -1,3 +1,3 @@
-export default  {
-    $marginLeft: 15,
+export default {
+  $marginLeft: 15
 }

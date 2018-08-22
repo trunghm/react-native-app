@@ -1,4 +1,4 @@
-import Immutable from 'seamless-immutable';
+import Immutable from 'seamless-immutable'
 
 export default {
   connection: {
@@ -15,4 +15,4 @@ export default {
     isPublicContact: true,
     avatar: ''
   })
-};
+}
