@@ -63,7 +63,7 @@ react-native link
   ```
 
 
-##How to Build App
+## How to Build App
 
 1.  cd to the repo
 2.  Run Build for either OS
