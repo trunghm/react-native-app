@@ -27,10 +27,10 @@ cd react-native-app
 npm install
 ```
 
-**Step 4:** Install the library for IOS with Cocoa Pod
+**Step 4:** Link the library
 
 ```
-cd ./ios pod install --verbose
+react-native link
 ```
 
 ## How to Run App
