@@ -33,6 +33,13 @@ npm install
 react-native link
 ```
 
+## How to run Eslint
+You can config Eslint plugin in your IDE for realtime warning
+or you can run 
+```$xslt
+eslint src/
+```
+
 ## How to Run App
 
 1.  cd to the repo

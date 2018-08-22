@@ -6,7 +6,7 @@ import Response from './response'
 import {log} from '../utils/common-utils'
 
 class RestClient {
-  constructor (method, endpoint, profile, timeout = 300000) {
+  constructor (method, endpoint, timeout = 300000) {
     this.method = method
     this.endpoint = endpoint
     this.timeout = timeout

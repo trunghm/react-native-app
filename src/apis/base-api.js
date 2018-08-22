@@ -1,6 +1,6 @@
 import RestClient from './rest-client'
 import Methods from './methods'
-import Urls from './urls'
+import Urls from ''
 
 export default class BaseApi {
   constructor () {
@@ -9,7 +9,7 @@ export default class BaseApi {
   }
 
   execute (method, endpoint, headers = undefined, isAuthen = true, body = undefined) {
-    const restClient = new RestClient(method, endpoint, profile)
+    const restClient = new RestClient(method, endpoint)
     return restClient.execute(headers, body, isAuthen)
   }
 }
