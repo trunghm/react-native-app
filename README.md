@@ -21,13 +21,19 @@ git clone https://github.com/trunghm/react-native-app.git
 cd react-native-app
 ```
 
-**Step 3:** Install dependencies
+**Step 3:** Generate the IOS and Android native code
+
+```
+react-native upgrade
+```
+
+**Step 4:** Install dependencies
 
 ```
 npm install
 ```
 
-**Step 4:** Link the library
+**Step 5:** Link the library
 
 ```
 react-native link
