@@ -1,18 +1,14 @@
-import {fromJS}  from 'immutable'
+import {fromJS} from 'immutable'
 
 export default {
-
-  user: fromJS({
-    id:'',
-    fullName: '',
-    phone: '',
-    email: '',
-    avatar: '',
-    birthday: '',
-    gender: '',
-
-  }),
   language: fromJS({
     name: 'vi',
+  }),
+
+  test: fromJS({
+    fetching: false,
+    success: false,
+    errorMsg: null,
+    data: null,
   })
 }

@@ -1,4 +1,4 @@
-import actionTypes from '../constant/actionType'
+import actionTypes from './actionType'
 
 export function changeLanguage (language) {
   return function (dispatch) {

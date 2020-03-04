@@ -21,7 +21,7 @@ const styles = () => EStyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     bottom: 20,
-    position: 'absolute'
+    flex : 1,
   },
   paginationDot: {
     width: 7,
@@ -47,7 +47,7 @@ const styles = () => EStyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: 50
+    height: 50,
   },
   createUserButtonWrapper: {
     width: '100%',

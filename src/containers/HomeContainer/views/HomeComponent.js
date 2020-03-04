@@ -1,11 +1,6 @@
 import React, {Component} from 'react'
 import {View, ImageBackground, Image, Platform,Text,TouchableOpacity} from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
-import PlaceHolderRow from '../../../components/commons/PlaceHolderRow'
-import StandardBoldText from '../../../components/commons/StandardBoldText'
-import StandardText from '../../../components/commons/StandardText'
-import Button from '../../../components/commons/Button'
-import BoldLink from '../../../components/commons/BoldLink'
 import Images from '../../../components/themes/Images'
 import Colors from '../../../components/themes/Colors'
 import styles from './styles';

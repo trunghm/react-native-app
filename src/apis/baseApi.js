@@ -4,8 +4,8 @@ import * as Urls  from "./urls";
 
 export default class BaseApi {
   constructor () {
-    this.Urls = Urls
-    this.Methods = Methods
+    this.Urls = Urls;
+    this.Methods = Methods;
   }
 
   execute (method, endpoint, headers = undefined,   body = undefined) {
