@@ -2,7 +2,7 @@ import {create} from 'apisauce'
 import * as Urls from './urls'
 import Methods from './methods'
 import Response from './response'
-import {log} from '../utils/common-utils'
+import {log} from '../utils/commonUtils'
 
 
 class RestClient {

@@ -6,25 +6,19 @@ import styles from './styles'
 import * as navigationStack from '../../../navigation/navigationStack';
 
 export default class LoginComponent extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
   }
 
 
-  onLogInClick =  () => {
-    this.props.userAction.getUserDetail({'userId':'1afae41355b51119792f06c28f2c62df64b12a75'}).then(res =>{
+  onLogInClick = () => {
+    this.props.testActions.getTestData({user: "octokit", repo: "octokit.rb"}).then(res => {
       this.props.navigation.replace(navigationStack.HOME_SCREEN);
-    });
-
+    })
   }
 
-
-
-
-  render () {
+  render() {
     return (
       <View style={styles().container}>
         <ImageBackground source={Images.splash} style={styles().splash}>
