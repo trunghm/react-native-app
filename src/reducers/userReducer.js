@@ -1,4 +1,4 @@
-import actionTypes from '../constant/actionType'
+import actionTypes from '../actions/actionType'
 import InitialState from './initialState'
 
 export default function userReducer (state = InitialState.user, action) {

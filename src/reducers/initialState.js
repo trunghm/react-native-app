@@ -14,5 +14,11 @@ export default {
   },
   language:  {
     name: 'vi',
+  },
+  test: {
+    fetching: false,
+    success: false,
+    errorMsg: null,
+    data: null,
   }
 }
