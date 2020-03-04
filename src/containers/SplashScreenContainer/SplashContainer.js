@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import SplashComponent from './views/index'
 
 const mapStateToProps = (state) => ({
-     userState: state.testReducer,
+     userState: state.testReducer.toJS(),
 })
 
 // Define the actions this component may dispatch
