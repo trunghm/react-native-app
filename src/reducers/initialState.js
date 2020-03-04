@@ -1,18 +1,18 @@
-import Immutable from 'seamless-immutable'
+import {fromJS}  from 'immutable'
 
 export default {
-  connection: {
-    isConnected: null
-  },
-  user: Immutable({
-    name: '',
-    lastName: '',
-    playerId: 0,
-    agePlayer: 0,
-    address: '',
+
+  user: fromJS({
+    id:'',
+    fullName: '',
     phone: '',
-    emails: [],
-    isPublicContact: true,
-    avatar: ''
+    email: '',
+    avatar: '',
+    birthday: '',
+    gender: '',
+
+  }),
+  language: fromJS({
+    name: 'vi',
   })
 }

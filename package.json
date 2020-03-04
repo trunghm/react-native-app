@@ -1,55 +1,57 @@
 {
-  "name": "ReactNativeAppTemplate",
+  "name": "template",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
-    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
-    "newclear": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build && rm -rf node_modules/ && npm cache clean --force && npm i",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "build": "cd android && ./gradlew assembleRelease && cd ../",
-    "log-a": "react-native log-android",
-    "log-i": "react-native log-ios",
-    "a": "react-native run-android",
-    "i": "react-native run-ios"
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
   },
   "dependencies": {
-    "apisauce": "^0.15.1",
-    "babel-plugin-transform-remove-console": "^6.9.4",
-    "lodash": "^4.17.4",
-    "on-headers": "^1.0.1",
-    "prop-types": "^15.6.1",
-    "react": "16.3.1",
-    "react-native": "0.55.3",
-    "react-native-check-app-install": "0.0.4",
-    "react-native-extended-stylesheet": "^0.8.0",
-    "react-native-fetch-blob": "^0.10.8",
-    "react-native-google-analytics-bridge": "^5.6.3",
-    "react-native-router-flux": "4.0.0-beta.27",
-    "react-native-smart-splash-screen": "^2.3.5",
-    "react-native-snap-carousel": "^3.7.2",
-    "react-native-status-bar-height": "^2.0.0",
-    "react-native-styles-shorthand": "^1.0.0",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.2.0",
-    "seamless-immutable": "^7.1.3"
+    "@react-native-community/masked-view": "^0.1.1",
+    "@react-navigation/bottom-tabs": "^5.0.5",
+    "@react-navigation/drawer": "^5.0.5",
+    "@react-navigation/material-bottom-tabs": "^5.0.5",
+    "@react-navigation/material-top-tabs": "^5.0.5",
+    "@react-navigation/native": "^5.0.5",
+    "@react-navigation/stack": "^5.0.5",
+    "apisauce": "^1.1.1",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "16.9.0",
+    "react-native": "0.61.5",
+    "react-native-extended-stylesheet": "^0.12.0",
+    "react-native-gesture-handler": "^1.6.0",
+    "react-native-i18n": "^2.0.15",
+    "react-native-paper": ">= 3.0.0",
+    "react-native-reanimated": "1.4.0",
+    "react-native-safe-area-context": "0.6.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-tab-view": ">= 2.0.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-immutable": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist-immutable": "^4.3.1",
+    "redux-persist-transform-immutable": "^5.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-jest": "^22.4.3",
-    "babel-preset-react-native": "4.0.0",
-    "jest": "22.0.3",
-    "react-test-renderer": "^16.3.1"
+    "@babel/core": "^7.8.6",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^0.0.7",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.9.0"
   },
   "jest": {
     "preset": "react-native"
-  },
-  "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
   }
 }

@@ -1,14 +1,12 @@
 'use strict'
 
-import {combineReducers} from 'redux'
-import connection from './connection'
-import userReducer from './user-reducer'
-import NavigationReducer from './navigationReducer'
+import { combineReducers } from 'redux-immutable';
+import userReducer from './userReducer'
+import languageReducer from './languageReducer'
 // Combine all
 const appReducer = combineReducers({
-  NavigationReducer,
-  connection,
-  userReducer
+  userReducer,
+  languageReducer
 })
 
 export default appReducer

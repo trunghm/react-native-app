@@ -1,4 +1,9 @@
-import { AppRegistry } from 'react-native';
-import App from './src/containers/';
+/**
+ * @format
+ */
 
-AppRegistry.registerComponent('ReactNativeAppTemplate', () => App);
+import {AppRegistry} from 'react-native';
+import App from './src/containers';
+import {name as appName} from './app.json';
+
+AppRegistry.registerComponent(appName, () => App);

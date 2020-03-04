@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Colors from '../themes/Colors';
 import Fonts from '../themes/Fonts';
-import Metrics from '../themes/Metrics';
 
 import {
   StyleSheet,
@@ -69,7 +68,7 @@ const styles = StyleSheet.create({
   radiusButton: {
     borderRadius: 5,
     marginBottom: 24,
-    marginRight: Metrics.marginRight,
-    marginLeft: Metrics.marginLeft
+    marginRight: 16,
+    marginLeft: 16
   }
 });

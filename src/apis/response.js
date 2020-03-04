@@ -1,3 +1,19 @@
+import {CLIENT_ERROR, NETWORK_ERROR, SERVER_ERROR} from 'apisauce';
+
+export const ERROR_CODE = {
+  LOGIN_FAIL: 'LOGIN_FAIL',
+  UN_KNOWN: 'UN_KNOWN',
+};
+
+export const ERROR_MSG = {
+  LOGIN_FAIL: 'The email or password is not corrected',
+  SERVER_ERROR: 'Have error in server',
+  TIMEOUT_ERROR: 'Request is timeout',
+  NETWORK_ERROR: 'Can not connect server',
+  DEFAULT: 'Something wrong',
+};
+
+
 export default class Response {
   constructor ({statusCode = 200, statusText = null, data = null, headers = null, error = null, message = null}) {
     this.statusCode = statusCode
@@ -16,31 +32,57 @@ export default class Response {
       this.message = message
     }
   }
+  static responseModel(res) {
+    let error = null;
+    let resultSuccess = null;
 
-  static createResponseData (res) {
-    const response = new Response({
-      error: res.data && res.data.status && res.data.status.statusCode ? res.data.status.statusCode : '',
-      data: res.data,
-      message: res.data && res.data.status && res.data.status.detailMessage ? res.data.status.detailMessage : ''
-    })
-    if (res) {
-      response.success = res.data && res.data.status && res.data.status.statusCode && res.data.status.statusCode === '200' || res.data.status.statusCode === '201' || res.data.status.statusCode === '204'
-      if (res.problem && res.problem === 'TIMEOUT_ERROR') {
-        response.message = 'Request timeout'
-        response.statusCode = 408
+    if (!res.ok) {
+      switch (res.problem) {
+        case NETWORK_ERROR: {
+          error = {
+            code: NETWORK_ERROR,
+            message: ERROR_MSG.NETWORK_ERROR,
+          };
+          break;
+        }
+        case SERVER_ERROR: {
+          error = {
+            code: SERVER_ERROR,
+            message: ERROR_MSG.SERVER_ERROR,
+          };
+          break;
+        }
+
+        case CLIENT_ERROR: {
+          error = {
+            code:
+                res.data === ERROR_CODE.LOGIN_FAIL
+                    ? ERROR_CODE.LOGIN_FAIL
+                    : ERROR_CODE.UN_KNOWN,
+            message:
+                res.data === ERROR_CODE.LOGIN_FAIL
+                    ? ERROR_MSG.LOGIN_FAIL
+                    : ERROR_MSG.DEFAULT,
+          };
+          break;
+        }
+
+        default: {
+          error = {
+            code: ERROR_CODE.UN_KNOWN,
+            message: ERROR_MSG.DEFAULT,
+          };
+        }
       }
-      if (Array.isArray(res.data)) {
-        response.data = {items: res.data}
-      } else {
-        response.data = res.data || null
-      }
+    } else {
+      resultSuccess = {
+        success: res.ok,
+        data: res.ok ? res.data : '',
+      };
     }
-    return response
+    return { error, resultSuccess };
   }
 
-  static createCustomResponseData (res) {
-    const response = new Response(res)
-    // TODO: add your custom object mapping here
-    return response
-  }
+
+
 }
