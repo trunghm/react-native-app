@@ -1,25 +1,29 @@
 import React, { Component } from 'react'
 import { applyMiddleware, compose, createStore } from 'redux'
 import { Provider} from 'react-redux'
-import thunk from 'redux-thunk'
 import App from './AppContainer'
 import appReducer from '../reducers/index'
+import I18n from "../I18n/I18n";
+import { PersistGate } from 'redux-persist/integration/react'
+
+import configureStore from "../store/configureStore";
 // import SplashScreen from 'react-native-smart-splash-screen'
 
-let middleware = [
-  thunk // Allows action creators to return functions (not just plain objects)
-]
 
-const store = compose(
-  applyMiddleware(...middleware)
-)(createStore)(appReducer)
+
+const {store,persistor}  =  configureStore();
 
 export default class AppContainer extends Component {
   constructor (props) {
     super(props)
   }
 
-  componentDidMount () {
+
+  async componentDidMount() {
+    // const {store ,persistStore} = await configureStore();
+    //
+    // this.setState({ store,persistStore });
+
     // SplashScreen.close({
     //   animationType: SplashScreen.animationType.scale,
     //   duration: 850,
@@ -27,11 +31,16 @@ export default class AppContainer extends Component {
     // })
   }
 
+
   render () {
     return (
+
       <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
         <App />
+        </PersistGate>
       </Provider>
+
     )
   }
 }

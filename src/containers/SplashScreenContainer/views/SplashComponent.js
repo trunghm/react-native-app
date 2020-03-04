@@ -19,7 +19,13 @@ export default class SplashComponent extends Component {
   }
 
     componentDidMount () {
+    console.log('----userState---',this.props.userState)
+    if(this.props.userState && this.props.userState.id != ''){
+      this.props.navigation.replace(navigationStack.HOME_SCREEN);
+
+    }else{
       this.props.navigation.replace(navigationStack.LOGIN_SCREEN);
+    }
     }
 
   render () {

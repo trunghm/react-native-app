@@ -2,7 +2,7 @@ import {fromJS}  from 'immutable'
 
 export default {
 
-  user: fromJS({
+  user:  {
     id:'',
     fullName: '',
     phone: '',
@@ -11,8 +11,8 @@ export default {
     birthday: '',
     gender: '',
 
-  }),
-  language: fromJS({
+  },
+  language:  {
     name: 'vi',
-  })
+  }
 }
