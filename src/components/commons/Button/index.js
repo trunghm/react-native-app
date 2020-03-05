@@ -6,17 +6,18 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default function Button({onPress, text, isShowRadiusButton, disabled}) {
-  const radiusStyle = isShowRadiusButton ? styles().radiusButton : {};
+export default function Button({onPress = ()=>{}, text ="", round, disabled, full} = {}) {
   return (
-    <View style={styles().container}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={[styles().buttonWrapper, disabled ? styles().disabled : null, radiusStyle]}
-      >
-        <Text style={styles().text}>{text.toUpperCase()}</Text>
-      </TouchableOpacity>
-    </View>);
+    <TouchableOpacity
+      onPress={onPress}
+      style={[full ? styles().fullType : styles().wrap, styles().general, round && styles().round]}
+    >
+      <Text style={styles().text}>{text.toUpperCase()}</Text>
+    </TouchableOpacity>
+  )
 }
+
+
+
 
 

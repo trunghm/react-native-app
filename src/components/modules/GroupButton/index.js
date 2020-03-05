@@ -14,7 +14,7 @@ export default function GroupButton({index, data, onSelect}) {
       {
         data.map((title, _index) => {
           const status = index === _index ? "active" : "deactive";
-          return <Button text={title} disabled={status === "active" ? false : true} onPress={() => {
+          return <Button text={title} disabled={status === "active" ? false : true} full onPress={() => {
             onSelect(_index);
           }}/>
         })

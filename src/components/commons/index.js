@@ -6,5 +6,5 @@ import SectionHeader from './SectionHeader';
 export {
   Button,
   Avatar,
-  SectionHeader
+  SectionHeader,
 }

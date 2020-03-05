@@ -3,9 +3,9 @@ import GlobalStore from "../../../themes/GlobalStore";
 
 const styles = () => EStyleSheet.create({
   container: {
-    width: '100%',
+    width : "100%",
     flexDirection:"row",
-    height: 50,
+    maxHeight: 50,
   },
   active:{
     backgroundColor:GlobalStore.color.primary,
