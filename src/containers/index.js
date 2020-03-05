@@ -37,7 +37,7 @@ export default class AppContainer extends Component {
 
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-        <App />
+          <App />
         </PersistGate>
       </Provider>
 

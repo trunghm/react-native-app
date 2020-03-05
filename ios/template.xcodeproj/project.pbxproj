@@ -28,6 +28,7 @@
 		546C28F0488747EFBE3EEECF /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC506EAC1234BE687B7C7B8 /* SimpleLineIcons.ttf */; };
 		6102969B9029A06219513490 /* libPods-templateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA239D09961E5CC5C9F9619 /* libPods-templateTests.a */; };
 		84310932240E485D0063FB4E /* SplashScreenResource in Resources */ = {isa = PBXBuildFile; fileRef = 84310931240E485D0063FB4E /* SplashScreenResource */; };
+		843109392410B9D10063FB4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843109382410B9D10063FB4E /* GoogleService-Info.plist */; };
 		8848A262F7F041F7BC9ED907 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72BB5477BB1A45AE8712A5DD /* AntDesign.ttf */; };
 		94B0B29E648C4A9DAF0D4836 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 252D6DBADE8749A6B89F65D6 /* Ionicons.ttf */; };
 		A49C95ABCA0B4078B8087920 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0D4CB0D199E4719B887A76C /* MaterialIcons.ttf */; };
@@ -86,6 +87,8 @@
 		7A9EBDA4D0D6473CB6985D8A /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		7FC506EAC1234BE687B7C7B8 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		84310931240E485D0063FB4E /* SplashScreenResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SplashScreenResource; sourceTree = "<group>"; };
+		843109352410B2C60063FB4E /* template.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = template.entitlements; path = template/template.entitlements; sourceTree = "<group>"; };
+		843109382410B9D10063FB4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		878695FA6FC744BD267152AE /* Pods-templateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-templateTests.debug.xcconfig"; path = "Target Support Files/Pods-templateTests/Pods-templateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		913733C0424C8C7BB06E0B1D /* libPods-template-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-template-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D105C7CBC026FFEA3C9B6A /* Pods-template-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-template-tvOS/Pods-template-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 		13B07FAE1A68108700A75B9A /* template */ = {
 			isa = PBXGroup;
 			children = (
+				843109382410B9D10063FB4E /* GoogleService-Info.plist */,
+				843109352410B2C60063FB4E /* template.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -288,6 +293,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				847EA1D72410FCB400AACDBE /* Run Script */,
 				2CA56CA8A1AE91A91B5136FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -349,7 +355,12 @@
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = QA84AQQV8V;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = QA84AQQV8V;
+						ProvisioningStyle = Manual;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -363,7 +374,7 @@
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "template" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -398,6 +409,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				84310932240E485D0063FB4E /* SplashScreenResource in Resources */,
+				843109392410B9D10063FB4E /* GoogleService-Info.plist in Resources */,
 				8848A262F7F041F7BC9ED907 /* AntDesign.ttf in Resources */,
 				4A5C9C493376416E9CFEF024 /* Entypo.ttf in Resources */,
 				157423FF07AA4962922D51BA /* EvilIcons.ttf in Resources */,
@@ -556,6 +568,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		847EA1D72410FCB400AACDBE /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		8B6B9F05AC893F6A7CFD3623 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -696,6 +726,7 @@
 			baseConfigurationReference = 878695FA6FC744BD267152AE /* Pods-templateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = QA84AQQV8V;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -724,6 +755,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = QA84AQQV8V;
 				INFOPLIST_FILE = templateTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -747,8 +779,12 @@
 			baseConfigurationReference = 0AA0F8A75182374C7A6CF701 /* Pods-template.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = template/template.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = QA84AQQV8V;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -786,8 +822,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactjs.native.template;
 				PRODUCT_NAME = template;
+				PROVISIONING_PROFILE_SPECIFIER = push1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -797,7 +834,11 @@
 			baseConfigurationReference = 68C898E323AB087532E25443 /* Pods-template.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = template/template.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA84AQQV8V;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -835,8 +876,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactjs.native.template;
 				PRODUCT_NAME = template;
+				PROVISIONING_PROFILE_SPECIFIER = push1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

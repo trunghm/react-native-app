@@ -35,6 +35,10 @@ target 'template' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+  pod 'Firebase/Messaging', '~> 6.13.0'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+  pod 'RNFirebase/Crashlytics', :path => '../node_modules/react-native-firebase/ios'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'templateTests' do
