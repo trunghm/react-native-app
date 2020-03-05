@@ -12,6 +12,8 @@ import NavigationStack from '../navigation/navigationStack'
 import globalStyles from '../styles/global'
 import EStyleSheet from 'react-native-extended-stylesheet';
 import I18n from '../I18n/I18n';
+import Colors from "../themes/Colors";
+import GlobalStore from "../themes/GlobalStore"
 
 EStyleSheet.build(globalStyles)
 
@@ -23,7 +25,9 @@ class AppContainer extends Component {
        persistStore:null,
     };
     console.log('----props.languageState--',props.languageState)
-
+    const {settingsState : {theme}} = props;
+    GlobalStore.theme = theme;
+    GlobalStore.color = Colors(theme);
   }
 
     async componentDidMount() {
@@ -50,8 +54,8 @@ class AppContainer extends Component {
 }
 // Define which part of the state we're passing to this component
 const mapStateToProps = (state) => ({
-  languageState: state.get('languageReducer').toJS(),
-  settingsState: state.get('settingsReducer').toJS(),
+  languageState: state.languageReducer.toJS(),
+  settingsState: state.settingsReducer.toJS(),
 })
 
 // Define the actions this component may dispatch

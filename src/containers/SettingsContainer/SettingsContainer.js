@@ -10,7 +10,7 @@ import * as settingsActions from '../../actions/settingsActions';
 
 // Define which part of the state we're passing to this component
 const mapStateToProps = (state) => ({
-  settingsState: state.get("settingsReducer").toJS()
+  settingsState: state.settingsReducer.toJS()
 })
 
 // Define the actions this component may dispatch

@@ -18,7 +18,6 @@ export default class HomeComponent extends Component {
 
   render() {
     const {settingsState: {theme}, settingsActions} = this.props;
-
     return (
       <View style={[styles().container]}>
         <Text style={styles().text}>Change Theme</Text>
