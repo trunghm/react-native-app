@@ -1,7 +1,8 @@
 'use strict'
 
-import {combineReducers} from 'redux-immutable';
-import languageReducer from './languageReducer';
+import { combineReducers } from 'redux';
+import languageReducer from './languageReducer'
+// import {combineReducers} from 'redux-immutable';
 import testReducer from './testReducer';
 import settingsReducer from './settingsReducer';
 // Combine all

@@ -2,10 +2,11 @@ import {fromJS} from 'immutable';
 import {LIGHT_MODE, DARK_MODE} from "../themes/Colors";
 
 export default {
-  language: fromJS({
+
+
+  language:   fromJS({
     name: 'vi',
   }),
-
   test: fromJS({
     fetching: false,
     success: false,

@@ -1,30 +1,37 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { AsyncStorage } from 'react-native';
-
+import AsyncStorage from '@react-native-community/async-storage';
 import { createLogger } from 'redux-logger';
-import { persistStore } from 'redux-persist-immutable';
+import { persistStore ,persistReducer} from 'redux-persist';
 import immutableTransform from 'redux-persist-transform-immutable';
-import Immutable, { Iterable } from 'immutable';
+import Immutable, { isImmutable } from 'immutable';
 import AppReducer from '../reducers/'
 import thunk from 'redux-thunk';
-import initialState from '../reducers/initialState'
+
 
 export default function configureStore() {
   const persistConfig = {
     transforms: [immutableTransform()],
     key: 'root',
+
     storage: AsyncStorage,
-    whitelist: ['userReducer','languageReducer' ],
-    blacklist: [],
+    // whitelist: ['userReducer','languageReducer' ],
+    // blacklist: [],
   };
   const middleware = [thunk];
   const enhancers = [];
 
 
   const stateTransformer = state => {
-    if (Iterable.isIterable(state)) return state.toJS();
-    else return state;
-    // return state;
+    let temState = {...state};
+     Object.keys(state).forEach((key,index) => {
+      if (isImmutable(state[key])) {
+        temState[key] = state[key].toJS()
+      }  else  {
+        temState[key] = state[key];
+      } ;
+    });
+
+    return temState;
   };
 
   if (__DEV__) {
@@ -35,13 +42,11 @@ export default function configureStore() {
     );
   }
 
-  enhancers.push(applyMiddleware(...middleware));
+  enhancers.push(applyMiddleware(...middleware) );
 
-  const store = createStore(AppReducer ,  compose(...enhancers));
+  const persistedReducer = persistReducer(persistConfig, AppReducer);
+  const store = createStore(persistedReducer ,  compose(...enhancers));
 
-
-  persistStore(store, {
-    ...persistConfig,
-  });
-  return store;
+  let persistor = persistStore(store);
+  return {store,persistor};
 }
