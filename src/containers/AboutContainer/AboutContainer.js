@@ -2,10 +2,11 @@
 
 import React from 'react'
 import {connect} from 'react-redux'
-import WelComeComponent from './views/index'
+import AboutComponent from './views/index'
 
 // Define which part of the state we're passing to this component
 const mapStateToProps = (state) => ({
+  settingsState : state.settingsReducer.toJSON()
 })
 
 // Define the actions this component may dispatch
@@ -15,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WelComeComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(AboutComponent)

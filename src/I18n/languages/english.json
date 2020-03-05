@@ -1,8 +1,19 @@
 {
-
-  "home" :"Home",
-  "welcome": "Welcome",
-  "home_page": "Home Page",
-  "welcome_page": "Welcome"
-
+  "message_page": {
+    "title_page": "Message"
+  },
+  "about_page": {
+    "title_page": "About"
+  },
+  "settings_page": {
+    "title_page": "Settings",
+    "change_theme": "Change theme",
+    "change_language": "Change language",
+    "light_mode": "Light mode",
+    "dark_mode": "dark mode",
+    "logout":"Logout"
+  },
+  "login_page":{
+    "login":"Login"
+  }
 }

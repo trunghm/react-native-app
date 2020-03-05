@@ -4,6 +4,7 @@ import BoldLink from '../../../components/commons/BoldLink'
 import Images from '../../../components/themes/Images'
 import styles from './styles'
 import * as navigationStack from '../../../navigation/navigationStack';
+import I18n from "../../../I18n";
 
 export default class LoginComponent extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class LoginComponent extends Component {
             <View style={styles().loginWrapper}>
               <BoldLink
                 onPress={this.onLogInClick}
-                text={'LOGIN'}
+                text={I18n.t("login_page.login")}
                 isWhiteColor={true}
               />
             </View>

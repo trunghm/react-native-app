@@ -1,11 +1,15 @@
 import EStyleSheet from "react-native-extended-stylesheet";
 import {Platform} from "react-native";
+import GlobalStore from "../../../themes/GlobalStore";
 
 const styles = () => EStyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: GlobalStore.color.primaryBg
+  },
+  text: {
+    color: GlobalStore.color.text,
   },
   splash: {
     width: '100%',
@@ -23,19 +27,6 @@ const styles = () => EStyleSheet.create({
     bottom: 20,
     flex : 1,
   },
-  paginationDot: {
-    width: 7,
-    height: 7,
-    borderRadius: 3,
-    marginHorizontal: 0
-  },
-  slideInnerContainer: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 16
-  },
   slider: {
     overflow: 'visible' // for custom animations
   },
@@ -49,13 +40,5 @@ const styles = () => EStyleSheet.create({
     width: '100%',
     height: 50,
   },
-  createUserButtonWrapper: {
-    width: '100%',
-    height: 50
-  },
-  carouselWrapper: {
-    height: Platform.OS === 'ios' ? 190 : 196,
-    width: '100%'
-  }
 });
 export default styles;

@@ -4,7 +4,7 @@ import {View, ImageBackground, Image, Platform, Text} from 'react-native';
 import styles from './styles';
 import I18n from '../../../I18n/I18n';
 
-export default class WelComeComponent extends Component {
+export default class AboutComponent extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -18,7 +18,7 @@ export default class WelComeComponent extends Component {
   render () {
     return (
       <View style={styles().container}>
-        <Text>{I18n.t('welcome_page')} </Text>
+        <Text style={styles().text}>{I18n.t('about_page.title_page')} </Text>
       </View>
     )
   }

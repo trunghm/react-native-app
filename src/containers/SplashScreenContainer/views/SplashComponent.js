@@ -1,38 +1,36 @@
 import React, {Component} from 'react'
-import {View, ImageBackground, Image, Platform,Text,TouchableOpacity} from 'react-native'
+import {View, ImageBackground, Image, Platform, Text, TouchableOpacity} from 'react-native'
 import styles from './styles';
-
-import I18n from '../../../I18n/I18n'
-import {NavigationContainer} from '@react-navigation/native';
-
-import { CommonActions } from '@react-navigation/native';
 import Images from '../../../components/themes/Images';
 import * as navigationStack from '../../../navigation/navigationStack';
+import AsyncStorage from "@react-native-community/async-storage";
 
 export default class SplashComponent extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state = {
-
-    }
+    this.state = {}
 
   }
 
-    componentDidMount () {
-    console.log('----userState---',this.props.userState)
-    if(this.props.userState && this.props.userState.data != null){
-      this.props.navigation.replace(navigationStack.HOME_SCREEN);
-
-    }else{
+  componentDidMount() {
+    AsyncStorage.getItem("persist:root").then(str => {
+      const object = JSON.parse(str);
+      if (JSON.parse(JSON.parse(object.testReducer)).data.data) {
+        this.props.navigation.replace(navigationStack.HOME_SCREEN);
+      }
+      else {
+        this.props.navigation.replace(navigationStack.LOGIN_SCREEN);
+      }
+    }).catch(() => {
       this.props.navigation.replace(navigationStack.LOGIN_SCREEN);
-    }
-    }
+    })
+  }
 
-  render () {
+  render() {
     return (
       <View style={styles().container}>
-          <ImageBackground source={Images.splash} style={styles().splash}>
-          </ImageBackground>
+        <ImageBackground source={Images.splash} style={styles().splash}>
+        </ImageBackground>
       </View>
     )
   }
