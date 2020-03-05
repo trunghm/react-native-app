@@ -33,9 +33,12 @@ target 'template' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-  
+
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
-  
+  pod 'Firebase/Messaging', '~> 6.13.0'
+
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+
   target 'templateTests' do
     inherit! :search_paths
     # Pods for testing

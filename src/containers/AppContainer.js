@@ -15,7 +15,7 @@ import I18n from '../I18n/I18n';
 import Colors from "../themes/Colors";
 import GlobalStore from "../themes/GlobalStore";
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
-
+import NotificationController from "../firebase/notification/index";
 EStyleSheet.build(globalStyles)
 
 class AppContainer extends Component {
@@ -45,6 +45,7 @@ class AppContainer extends Component {
       <SafeAreaProvider>
         <NavigationContainer>
           <NavigationStack/>
+          <NotificationController/>
         </NavigationContainer>
       </SafeAreaProvider>
 
