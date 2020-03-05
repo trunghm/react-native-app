@@ -10,10 +10,11 @@ export const HOME_SCREEN = "Home";
 export const LOGIN_SCREEN = "Login";
 export const SPLASH_SCREEN = "Splash";
 
+
 function NavigationStack() {
     return (
         <Stack.Navigator
-            initialRouteName={SPLASH_SCREEN}
+            initialRouteName={HOME_SCREEN}
             headerMode="screen"
         >
             <Stack.Screen name={HOME_SCREEN} component={TabStack} />
