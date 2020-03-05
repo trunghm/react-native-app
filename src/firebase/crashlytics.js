@@ -1,10 +1,9 @@
 import firebase from 'react-native-firebase';
-import { CommonUtils } from '../Utils';
 
 const crashlytics = firebase.crashlytics();
 
 export async function init() {
-    CommonUtils.rlog('INIT CRASHLYTICS');
+
     crashlytics.enableCrashlyticsCollection();
     // crashlytics.setStringValue('env', Config.env);
     // crashlytics.setStringValue('Rootenv', Config.rootEnv);

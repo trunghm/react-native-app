@@ -16,7 +16,9 @@ import Colors from "../themes/Colors";
 import GlobalStore from "../themes/GlobalStore";
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import NotificationController from "../firebase/notification/index";
-EStyleSheet.build(globalStyles)
+EStyleSheet.build(globalStyles);
+
+import * as crashlytics from '../firebase/crashlytics';
 
 class AppContainer extends Component {
   constructor(props, context) {
@@ -33,6 +35,8 @@ class AppContainer extends Component {
     const {settingsState: {theme}} = this.props;
     GlobalStore.theme = theme;
     GlobalStore.color = Colors(theme);
+
+    crashlytics.init();
   }
 
   componentWillReceiveProps = nextProps => {
