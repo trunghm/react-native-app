@@ -1,5 +1,4 @@
 import BaseApi from './baseApi';
-import * as Urls from "./urls";
 
 class TestAPI extends BaseApi {
   getTestData({user, repo}) {

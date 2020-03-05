@@ -1,6 +1,4 @@
-
-
-export const DARK_MODE ="dark";
+export const DARK_MODE = "dark";
 export const LIGHT_MODE = "light";
 
 
@@ -13,7 +11,11 @@ const common = {
 
 const appColors = {
   primaryBg: [`#FFFFFF`, `#000000`],
+  primary: ['#1496bb', '#1496bb'],
   text: [`#333333`, `#FFFFFF`],
+  buttonTitle: ["#FFFFFF", "#FFFFFF"],
+  buttonBgDisable: ["#d2d2d2", "#d2d2d2"],
+  avatarBg: ["#d9e2e7", "#d9e2e7"]
 };
 
 const colors = theme => {

@@ -1,4 +1,6 @@
 import {CLIENT_ERROR, NETWORK_ERROR, SERVER_ERROR} from 'apisauce';
+import RestClient from "./restClient";
+import {log} from '../utils/commonUtils'
 
 export const ERROR_CODE = {
   LOGIN_FAIL: 'LOGIN_FAIL',
@@ -15,23 +17,7 @@ export const ERROR_MSG = {
 
 
 export default class Response {
-  constructor ({statusCode = 200, statusText = null, data = null, headers = null, error = null, message = null}) {
-    this.statusCode = statusCode
-    this.statusText = statusText
-    if (data) {
-      this.data = data
-    }
-    if (headers) {
-      this.headers = headers
-    }
-    if (error) {
-      this.error = error
-    }
-    this.message = ''
-    if (message) {
-      this.message = message
-    }
-  }
+
   static responseModel(res) {
     let error = null;
     let resultSuccess = null;
@@ -56,13 +42,13 @@ export default class Response {
         case CLIENT_ERROR: {
           error = {
             code:
-                res.data === ERROR_CODE.LOGIN_FAIL
-                    ? ERROR_CODE.LOGIN_FAIL
-                    : ERROR_CODE.UN_KNOWN,
+              res.data === ERROR_CODE.LOGIN_FAIL
+                ? ERROR_CODE.LOGIN_FAIL
+                : ERROR_CODE.UN_KNOWN,
             message:
-                res.data === ERROR_CODE.LOGIN_FAIL
-                    ? ERROR_MSG.LOGIN_FAIL
-                    : ERROR_MSG.DEFAULT,
+              res.data === ERROR_CODE.LOGIN_FAIL
+                ? ERROR_MSG.LOGIN_FAIL
+                : ERROR_MSG.DEFAULT,
           };
           break;
         }
@@ -80,9 +66,10 @@ export default class Response {
         data: res.ok ? res.data : '',
       };
     }
-    return { error, resultSuccess };
+    if (RestClient.debugAPI) {
+      log("-----------API RESPONSE----------",res);
+      log("------------RESPONSE CONVERTED------------", {error, resultSuccess});
+    }
+    return {error, resultSuccess};
   }
-
-
-
 }

@@ -4,11 +4,12 @@ import Methods from './methods'
 import Response from './response'
 import {log} from '../utils/commonUtils'
 
-
 class RestClient {
-  static token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOiIxYWZhZTQxMzU1YjUxMTE5NzkyZjA2YzI4ZjJjNjJkZjY0YjEyYTc1IiwieG1wcCI6ImNoYXRhcHAjdGVzdGluZ18xNjhAbmV4bGVjaGF0Lm5leGxlc29mdC5jb20iLCJ3aWQiOjEyNCwid25hbWUiOiJ6ZXJvaGlldTEiLCJlbWFpbCI6Inplcm9oaWV1KzFAZ21haWwuY29tIiwicm9sZSI6MSwiaWF0IjoxNTgzMjg5MTQwfQ.ojBqUY5uE_T0pYuvVke-ozCcPlBLd0hKya5xc_AEoY0';
+  static token = 'Bearer {your token}';
 
-  constructor (method, endpoint, timeout = 300000) {
+  static debugAPI = true;
+
+  constructor(method, endpoint, timeout = 300000) {
     this.method = method
     this.endpoint = endpoint
     this.timeout = timeout
@@ -20,7 +21,7 @@ class RestClient {
     this.BASE_URL = Urls.BASE_URL;
   }
 
-  execute (headers, body) {
+  execute(headers, body) {
     if (headers !== undefined && headers !== null) {
       this.headers = Object.assign(this.headers, headers)
     }
@@ -35,38 +36,27 @@ class RestClient {
     switch (this.method) {
       case Methods.GET: {
         return this.restClient.get(this.endpoint, body).then((res) => {
-
-            return Response.responseModel(res || {})
-
+          return Response.responseModel(res || {});
         })
       }
       case Methods.POST: {
         return this.restClient.post(this.endpoint, body).then((res) => {
-          log('rest-client/POST res: ', res, this.endpoint, JSON.stringify(body), this.headers)
-
-            return Response.responseModel(res || {})
-
+          return Response.responseModel(res || {});
         })
       }
       case Methods.PUT: {
         return this.restClient.put(this.endpoint, body).then((res) => {
-
-            return Response.responseModel(res || {})
-
+          return Response.responseModel(res || {});
         })
       }
       case Methods.DELETE: {
-        return this.restClient.delete(this.endpoint, {}, {data: body}).then((res) => {
-
-            return Response.responseModel(res || {})
-
+        return this.restClient.delete(this.endpoint, body).then((res) => {
+          return Response.responseModel(res || {});
         })
       }
       case Methods.PATCH: {
         return this.restClient.patch(this.endpoint, body).then((res) => {
-
-            return Response.responseModel(res || {})
-
+          return Response.responseModel(res || {});
         })
       }
       default: {

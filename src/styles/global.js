@@ -1,3 +1,5 @@
+export const PADDING_V_SCREEN =15;
+
 export default {
-  $marginLeft: 15
+  $padding_v_screen: PADDING_V_SCREEN,
 }

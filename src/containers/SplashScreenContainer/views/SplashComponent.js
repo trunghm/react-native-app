@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {View, ImageBackground, Image, Platform, Text, TouchableOpacity} from 'react-native'
 import styles from './styles';
-import Images from '../../../components/themes/Images';
+import Images from '../../../themes/Images';
 import * as navigationStack from '../../../navigation/navigationStack';
 import AsyncStorage from "@react-native-community/async-storage";
 

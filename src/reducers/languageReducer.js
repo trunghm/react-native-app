@@ -6,7 +6,7 @@ export default function languageReducer (state = InitialState.language, action) 
   switch (action.type) {
     case actionTypes.CHANGE_LANGUAGE:
       I18n.locale = action.language;
-      return state.merge({...state,name:action.language})
+      return state.merge({...state,name:action.payload.language})
 
     default:
       return state

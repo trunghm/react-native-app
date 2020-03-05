@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {View, ImageBackground, Image, Platform} from 'react-native'
-import BoldLink from '../../../components/commons/BoldLink'
-import Images from '../../../components/themes/Images'
+import Images from '../../../themes/Images'
+import {Button} from "../../../components/commons";
 import styles from './styles'
 import * as navigationStack from '../../../navigation/navigationStack';
 import I18n from "../../../I18n";
@@ -26,13 +26,16 @@ export default class LoginComponent extends Component {
           <View style={styles().logoWrapper}>
             <Image source={Images.logo}/>
           </View>
-          <View style={styles().bodyWrapper}>
 
+          <View style={styles().bodyWrapper}>
+            <Button text={"View Components"} onPress={() => {
+              this.props.navigation.navigate(navigationStack.LIST_COMPONENT_SCREEN);
+            }}/>
+            <View style ={{marginTop: 10}}/>
             <View style={styles().loginWrapper}>
-              <BoldLink
+              <Button
                 onPress={this.onLogInClick}
                 text={I18n.t("login_page.login")}
-                isWhiteColor={true}
               />
             </View>
           </View>
