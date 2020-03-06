@@ -27,8 +27,11 @@
 		4F998C26E76641008C17D126 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4ECCD0B85B8F49CDAD8CBE19 /* Foundation.ttf */; };
 		546C28F0488747EFBE3EEECF /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7FC506EAC1234BE687B7C7B8 /* SimpleLineIcons.ttf */; };
 		6102969B9029A06219513490 /* libPods-templateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA239D09961E5CC5C9F9619 /* libPods-templateTests.a */; };
-		84310932240E485D0063FB4E /* SplashScreenResource in Resources */ = {isa = PBXBuildFile; fileRef = 84310931240E485D0063FB4E /* SplashScreenResource */; };
 		843109392410B9D10063FB4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843109382410B9D10063FB4E /* GoogleService-Info.plist */; };
+		847EA1E42411163300AACDBE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847EA1E22411163300AACDBE /* LaunchScreen.xib */; };
+		847EA1E82411EC3700AACDBE /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 847EA1E52411EC3600AACDBE /* splash.png */; };
+		847EA1E92411EC3700AACDBE /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847EA1E62411EC3600AACDBE /* splash@2x.png */; };
+		847EA1EA2411EC3700AACDBE /* splash@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847EA1E72411EC3600AACDBE /* splash@3x.png */; };
 		8848A262F7F041F7BC9ED907 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72BB5477BB1A45AE8712A5DD /* AntDesign.ttf */; };
 		94B0B29E648C4A9DAF0D4836 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 252D6DBADE8749A6B89F65D6 /* Ionicons.ttf */; };
 		A49C95ABCA0B4078B8087920 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0D4CB0D199E4719B887A76C /* MaterialIcons.ttf */; };
@@ -90,6 +93,10 @@
 		84310931240E485D0063FB4E /* SplashScreenResource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SplashScreenResource; sourceTree = "<group>"; };
 		843109352410B2C60063FB4E /* template.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = template.entitlements; path = template/template.entitlements; sourceTree = "<group>"; };
 		843109382410B9D10063FB4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		847EA1E22411163300AACDBE /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		847EA1E52411EC3600AACDBE /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = ../src/themes/images/splash.png; sourceTree = "<group>"; };
+		847EA1E62411EC3600AACDBE /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@2x.png"; path = "../src/themes/images/splash@2x.png"; sourceTree = "<group>"; };
+		847EA1E72411EC3600AACDBE /* splash@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash@3x.png"; path = "../src/themes/images/splash@3x.png"; sourceTree = "<group>"; };
 		878695FA6FC744BD267152AE /* Pods-templateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-templateTests.debug.xcconfig"; path = "Target Support Files/Pods-templateTests/Pods-templateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		913733C0424C8C7BB06E0B1D /* libPods-template-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-template-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D105C7CBC026FFEA3C9B6A /* Pods-template-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-template-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-template-tvOS/Pods-template-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +169,10 @@
 		13B07FAE1A68108700A75B9A /* template */ = {
 			isa = PBXGroup;
 			children = (
+				847EA1E52411EC3600AACDBE /* splash.png */,
+				847EA1E62411EC3600AACDBE /* splash@2x.png */,
+				847EA1E72411EC3600AACDBE /* splash@3x.png */,
+				847EA1E22411163300AACDBE /* LaunchScreen.xib */,
 				843109382410B9D10063FB4E /* GoogleService-Info.plist */,
 				843109352410B2C60063FB4E /* template.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -221,7 +232,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				84310931240E485D0063FB4E /* SplashScreenResource */,
 				13B07FAE1A68108700A75B9A /* template */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* templateTests */,
@@ -407,8 +417,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847EA1E92411EC3700AACDBE /* splash@2x.png in Resources */,
+				847EA1E82411EC3700AACDBE /* splash.png in Resources */,
+				847EA1E42411163300AACDBE /* LaunchScreen.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				84310932240E485D0063FB4E /* SplashScreenResource in Resources */,
+				847EA1EA2411EC3700AACDBE /* splash@3x.png in Resources */,
 				843109392410B9D10063FB4E /* GoogleService-Info.plist in Resources */,
 				8848A262F7F041F7BC9ED907 /* AntDesign.ttf in Resources */,
 				4A5C9C493376416E9CFEF024 /* Entypo.ttf in Resources */,
@@ -460,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
 		161802B6E134B69E75AE510A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

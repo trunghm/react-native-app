@@ -39,6 +39,8 @@ target 'template' do
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
   pod 'RNFirebase/Crashlytics', :path => '../node_modules/react-native-firebase/ios'
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'templateTests' do

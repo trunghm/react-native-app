@@ -19,6 +19,7 @@ import NotificationController from "../firebase/notification/index";
 EStyleSheet.build(globalStyles);
 
 import * as crashlytics from '../firebase/crashlytics';
+import SplashScreen from "react-native-splash-screen";
 
 class AppContainer extends Component {
   constructor(props, context) {
@@ -37,11 +38,11 @@ class AppContainer extends Component {
     GlobalStore.color = Colors(theme);
 
     crashlytics.init();
+
+    SplashScreen.hide();
   }
 
-  componentWillReceiveProps = nextProps => {
 
-  }
 
   render() {
     console.disableYellowBox = true;
