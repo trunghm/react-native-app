@@ -42,15 +42,14 @@ describe('Testing  GroupButton component', () => {
     );
 
     expect(wrapper).toMatchSnapshot();
-
-    expect( wrapper
+    const button1 = wrapper
       .findWhere((w) => w.prop('text') === 'button1')
-      .first().prop('disabled') ).toEqual(true);
-
-    expect( wrapper
+      .first();
+    const button2 = wrapper
       .findWhere((w) => w.prop('text') === 'button2')
-      .first().prop('disabled') ).toEqual(false);
-
+      .first();
+    expect(button1.prop('disabled') ).toEqual(true);
+    expect(button2.prop('disabled') ).toEqual(false);
 
   });
 

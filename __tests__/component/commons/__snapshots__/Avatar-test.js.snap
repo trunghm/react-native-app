@@ -16,7 +16,6 @@ exports[`Testing  Avatar component renders snapshot as expected 1`] = `
     }
   }
 >
-  <Image />
   <Text
     style={
       Object {

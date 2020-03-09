@@ -22,4 +22,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+export  {SettingComponent}
 export default connect(mapStateToProps, mapDispatchToProps)(SettingComponent)
