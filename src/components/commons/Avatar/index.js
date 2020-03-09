@@ -14,5 +14,17 @@ export default function Avatar({url, text}) {
     </View>);
 }
 
+export class Document {
+
+  static key ="Avatar"
+
+  static render = Avatar
+
+  static demo = {
+    selection :[],
+    options :[],
+    input :[{name :"url"},{name :"text"}]
+  }
+}
 
 
