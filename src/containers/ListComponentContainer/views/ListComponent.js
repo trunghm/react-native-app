@@ -250,6 +250,7 @@ export default class ListComponent extends Component {
   render() {
     return (
       <View style={styles().container}>
+        <ButtonRN title ={"Back"} onPress = {() =>(this.props.navigation.goBack())}/>
         <ScrollView>
 
           {
