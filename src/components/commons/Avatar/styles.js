@@ -16,6 +16,12 @@ const styles = () => EStyleSheet.create({
   text:{
     color : GlobalStore.color.primary
   },
+  circle:{
+    width : 45,
+    height: 45,
+    borderRadius:45,
+    borderWidth:0.5,
+  }
 
 });
 

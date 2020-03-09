@@ -9,21 +9,25 @@ import {
 export default function Avatar({url, text}) {
   return (
     <View style={styles().container}>
-      <Image style={styles().circle}/>
-      <Text style={styles().text}>{text}</Text>
+      {
+        url ? <Image style={styles().circle}
+                     source={{uri: url}}
+                     mode="cover"/> : <Text style={styles().text}>{text}</Text>
+
+      }
     </View>);
 }
 
 export class Document {
 
-  static key ="Avatar"
+  static key = "Avatar"
 
   static render = Avatar
 
   static demo = {
-    selection :[],
-    options :[],
-    input :[{name :"url"},{name :"text"}]
+    selection: [],
+    options: [],
+    input: [{name: "url"}, {name: "text"}]
   }
 }
 
