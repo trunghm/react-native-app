@@ -5,10 +5,13 @@ import {_} from 'lodash'
 
 export function changeTheme({theme}) {
   return function (dispatch) {
-    dispatch({
-      type: actionTypes.CHANGE_THEME,
-      payload:{theme}
-    });
+    dispatch(onChangeTheme({theme}));
   }
 }
 
+export function onChangeTheme({theme}) {
+  return {
+      type: actionTypes.CHANGE_THEME,
+      payload:{theme}
+    }
+}

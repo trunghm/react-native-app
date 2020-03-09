@@ -9,9 +9,7 @@ export function getTestData({user, repo}) {
       type: actionTypes.TEST_ACTION_PENDING,
     });
     return testServices.getTestData({user, repo}).then((response) => {
-      dispatch({
-        type: actionTypes.TEST_ACTION_SUCCESS, payload: {testData: response.data}
-      })
+      dispatch(onGetTestDataSuccess(response.data))
       return response
     }).catch(error => {
       const msgError = error.message || ERROR_MSG.DEFAULT;
@@ -20,6 +18,12 @@ export function getTestData({user, repo}) {
       });
       throw msgError;
     });
+  }
+}
+
+export function onGetTestDataSuccess(data) {
+  return {
+    type: actionTypes.TEST_ACTION_SUCCESS, payload: {testData: data}
   }
 }
 

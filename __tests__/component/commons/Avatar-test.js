@@ -4,13 +4,12 @@
 
 import 'react-native';
 import React from 'react';
-import GroupButton from '../../../src/components/modules/GroupButton';
+import Avatar from '../../../src/components/commons/Avatar';
 
 // Note: test renderer must be required after react-native.
-import { mount } from 'enzyme';
+import {mount, shallow} from 'enzyme';
+import renderer from  "react-test-renderer";
 import EStyleSheet from 'react-native-extended-stylesheet';
-import renderer from "react-test-renderer";
-
 
 
 const originalError = console.error;
@@ -25,11 +24,11 @@ afterAll(() => {
   console.error = originalError;
 });
 
-describe('Testing  GroupButton component', () => {
+describe('Testing  Avatar component', () => {
 
   it('renders snapshot as expected', () => {
     const wrapper = renderer.create(
-      <GroupButton data={["button1", "button2"] } index ={1} />
+      <Avatar text={"H"}/>
     );
 
     expect(wrapper).toMatchSnapshot();
@@ -38,19 +37,10 @@ describe('Testing  GroupButton component', () => {
 
   it('renders as expected', () => {
     const wrapper = mount(
-      <GroupButton data={["button1", "button2"] } index ={1} />
+      <Avatar text={"H"}/>
     );
 
     expect(wrapper).toMatchSnapshot();
-
-    expect( wrapper
-      .findWhere((w) => w.prop('text') === 'button1')
-      .first().prop('disabled') ).toEqual(true);
-
-    expect( wrapper
-      .findWhere((w) => w.prop('text') === 'button2')
-      .first().prop('disabled') ).toEqual(false);
-
 
   });
 
