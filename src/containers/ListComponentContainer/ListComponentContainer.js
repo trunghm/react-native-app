@@ -13,4 +13,6 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
+export {ListComponent}
+
 export default connect(mapStateToProps, mapDispatchToProps)(ListComponent)

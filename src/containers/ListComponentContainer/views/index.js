@@ -1,2 +1,2 @@
-import LoginComponent from './ListComponent'
-export  default  LoginComponent
+import ListComponent from './ListComponent'
+export  default  ListComponent

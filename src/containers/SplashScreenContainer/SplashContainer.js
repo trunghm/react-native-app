@@ -13,5 +13,5 @@ const mapDispatchToProps = (dispatch) => {
   return {
   }
 }
-
+export {SplashComponent};
 export default connect(mapStateToProps, mapDispatchToProps)(SplashComponent)
