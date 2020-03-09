@@ -12,9 +12,9 @@ export default function GroupButton({index, data = [], onSelect}) {
   return (
     <View style={styles().container}>
       {
-        Array.isArray(data) && data.map((title, _index) => {
-          const status = parseInt(index) === _index ? "active" : "deactive";
-          return <Button text={title} disabled={status === "active" ? false : true} full onPress={() => {
+        data.map((title, _index) => {
+          const status = index === _index ? "active" : "deactive";
+          return  <Button  key={_index} text={title} disabled={status === "active" ? false : true} full onPress={() => {
             onSelect(_index);
           }}/>
         })
